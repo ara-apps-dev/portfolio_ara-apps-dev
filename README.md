@@ -97,22 +97,22 @@ export const supabase = createClient(supabaseUrl, supabaseKey)
 
 <h2 id="implementing-pwa">4. Implementing PWA</h2>
 
-<h3>Installing and Configuring Next.js PWA</h3>
+<h3>Installing and Configuring Next.js <a href="https://ducanh-next-pwa.vercel.app/docs/next-pwa/getting-started">PWA</a></h3>
 
 <ul>
-  <li>Install: <code>npm install next-pwa</code></li>
-  <li>Configure <code>next.config.js</code>:</li>
+  <li>Install: <code>npm i @ducanh2912/next-pwa && npm i -D webpack</code></li>
+  <li>Configure <code>next.config.mjs</code>:</li>
 </ul>
 
-<pre><code>const withPWA = require('next-pwa')
+<pre><code>import withPWAInit from "@ducanh2912/next-pwa";
 
-module.exports = withPWA({
-  pwa: {
-    dest: 'public',
-    register: true,
-    skipWaiting: true,
-  },
-})
+const withPWA = withPWAInit({
+  dest: "public",
+});
+
+export default withPWA({
+  // Your Next.js config
+});
 </code></pre>
 
 <h2 id="storybook">5. Storybook</h2>
